@@ -46,7 +46,7 @@ if __name__ == '__main__':
     if bonus_taxed_alone == 'y':
         # 年终奖单独计算
         total_tax = tax.calc_tax(to_be_taxed_salary_annual - int(bonus))
-        total_tax += tax.calc_tax(int(bonus))
+        total_tax += tax.calc_tax(int(bonus) - tax.annual_tax_free)
     else:
         # 年终奖合计计算
         total_tax = tax.calc_tax(to_be_taxed_salary_annual)
